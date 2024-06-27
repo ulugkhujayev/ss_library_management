@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Books</h1>
+    <a href="{% url 'book_add' %}">Add Book</a>
+    <form method="get">
+        <select name="status">
+            <option value="">All</option>
+            <option value="available">Available</option>
+            <option value="borrowed">Borrowed</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <ul>
+    {% for book in books %}
+        <li>
+            {{ book.title }} by {{ book.author }} ({{ book.publication_year }}) - {{ book.genre }} - {{ book.status }}
+            <a href="{% url 'book_edit' book.id %}">Edit</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Loans</h1>
+    <a href="{% url 'loan_add' %}">Add Loan</a>
+    <ul>
+    {% for loan in loans %}
+        <li>
+            {{ loan.book.title }} - {{ loan.user.name }} - Borrowed: {{ loan.loan_date }}
+            {% if not loan.return_date %}
+                <a href="{% url 'return_book' loan.id %}">Return Book</a>
+            {% else %}
+                Returned: {{ loan.return_date }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
