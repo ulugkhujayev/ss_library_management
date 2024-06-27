@@ -23,4 +23,6 @@ Run `docker-compose run web python manage.py test`
 ## Deployment
 
 This project is configured for deployment with Docker, Gunicorn, and Whitenoise for static files.
-"I've designed and implemented robust API endpoints to facilitate seamless integration, now seeking a skilled frontend developer to bring the user interface to life 💻👍"
+
+
+```I've designed and implemented robust API endpoints to facilitate seamless integration, now seeking a skilled frontend developer to bring the user interface to life 💻👍```
